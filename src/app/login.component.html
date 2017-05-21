@@ -1,9 +1,17 @@
-<h3>Study starter</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let student of students"  [routerLink]="['/detail', student.id]"  class="col-1-4">
-    <div class="module student">
-      <h4>{{student.name}}</h4>
-    </div>
-  </a>
+
+<div>
+  <table>
+    <tr>
+      <td><label>Student email:</label> </td>
+      <td><input #email /> </td>
+    </tr>
+    <tr>
+      <td><label> Password:</label> </td>
+      <td><input #password /> </td>
+      <button (click)="add(email.value, password.value); email.value='';  password.value='' ">
+        Add
+      </button>
+    </tr>
+  </table>
 </div>
-<student-search></student-search>
+
