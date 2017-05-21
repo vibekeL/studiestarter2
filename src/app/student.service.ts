@@ -1,12 +1,12 @@
 import { Injectable }    from '@angular/core';
 import { Http, Response, Headers} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { Hero } from './hero';
+import { Student } from './student';
 import { RequestOptions } from '@angular/http';
 //import { Observable } from 'rxjs/Rx';
 
 @Injectable()
-export class HeroService {
+export class StudentService {
   
   //private heroesUrl = 'api/heroes';  // URL to web api
   private heroesListUrlPHP = 'http://gyring.org/getHeroes.php';
@@ -17,7 +17,7 @@ export class HeroService {
 
   constructor(private http: Http) { }
 
-  getHeroes (): Promise<Hero[]> {
+  getStudents (): Promise<Student[]> {
     return this.http.get(this.heroesListUrlPHP)
                   .toPromise()
                   .then(this.extractData)
@@ -43,14 +43,7 @@ export class HeroService {
     return Promise.reject(errMsg);
   }
 
-  getHeroesSlowly(): Promise<Hero[]> {
-    return new Promise(resolve => {
-      // Simulate server latency with 2 second delay
-      setTimeout(() => resolve(this.getHeroes()), 100);
-    });
-  }
-
-  getHero(id: number): Promise<Hero> {
+  getStudent(id: number): Promise<Student> {
     const url = `${this.heroByIdPHP}?id=${id}`;
     return this.http.get(url)
                   .toPromise()
@@ -60,15 +53,15 @@ export class HeroService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  update(hero: Hero): Promise<Hero> {
-     const url = `${this.heroUpdatePHP}?id=${hero.id}&name=${hero.name}&age=${hero.age}`;
+  update(student: Student): Promise<Student> {
+     const url = `${this.heroUpdatePHP}?id=${student.id}&name=${student.name}&age=${student.age}`;
      return this.http.get(url)
                   .toPromise()
                   .then(this.extractData) 
                   .catch(this.handleError);
   }
 
-create (name: string, age: number): Promise<Hero> {
+create (name: string, age: number): Promise<Student> {
   const url = `${this.heroAddPHP}?name=${name}&age=${age}`;
   return this.http.get(url)
                   .toPromise()

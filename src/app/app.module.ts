@@ -4,13 +4,13 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { RouterModule }   from '@angular/router';
 import { AppComponent }        from './app.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroesComponent }     from './heroes.component';
-import { HeroService }         from './hero.service';
+import { StudentDetailComponent } from './student-detail.component';
+import { StudentsComponent }     from './students.component';
+import { StudentService }         from './student.service';
 import { DashboardComponent }  from './dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HeroSearchComponent }    from './hero-search.component';
+import { StudentSearchComponent }    from './student-search.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -21,11 +21,11 @@ import { HeroSearchComponent }    from './hero-search.component';
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    HeroSearchComponent
+    StudentDetailComponent,
+    StudentsComponent,
+    StudentSearchComponent
   ],
-  providers: [ HeroService ],
+  providers: [ StudentService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

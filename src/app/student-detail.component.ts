@@ -2,17 +2,17 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Student } from './student';
+import { StudentService } from './student.service';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: [ './hero-detail.component.css' ],
+  selector: 'student-detail',
+  templateUrl: './student-detail.component.html',
+  styleUrls: [ './student-detail.component.css' ],
 })
 
-export class HeroDetailComponent implements OnInit {
+export class StudentDetailComponent implements OnInit {
 
 errorMessage: string = '';
 private sub: any;
@@ -22,18 +22,18 @@ heroID: number;
     this.sub = this.route.params.subscribe(params => {
         this.heroID = +params['id']; // (+) converts string 'id' to a number
     });
-      this.getMyHeroe(this.heroID);
+      this.getMyStudent(this.heroID);
   }
 
-  getMyHeroe(id: number) {
-    this.heroService.getHero(id)
+  getMyStudent(id: number) {
+    this.studentService.getStudent(id)
                    .then(
-                     hero => this.hero = hero,
+                     student => this.student = student,
                      error =>  this.errorMessage = <any>error);
 }
 
   constructor(
-      private heroService: HeroService,
+      private studentService: StudentService,
       private route: ActivatedRoute,
       private location: Location
     ) {}
@@ -43,10 +43,10 @@ heroID: number;
     }
 
     save(): void {
-      this.heroService.update(this.hero)
+      this.studentService.update(this.student)
         .then(() => this.goBack());
     }
 
 
-  @Input() hero: Hero;
+  @Input() student: Student;
 }
