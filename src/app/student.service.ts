@@ -15,7 +15,7 @@ export class StudentService {
   private heroesListUrlPHP = 'http://gyring.org/getHeroes.php';
   private heroByIdPHP = 'http://gyring.org/getHeroById.php';
   private heroAddPHP = 'http://gyring.org/addHero.php';
-  private heroDeletePHP = 'http://gyring.org/deleteHero.php';
+  //private heroDeletePHP = 'http://gyring.org/deleteHero.php';
   private heroUpdatePHP = 'http://gyring.org/updateHero.php';
 
   constructor(private http: Http) { }
@@ -47,7 +47,15 @@ export class StudentService {
   }
 
   getStudent(email: string): Promise<Student> {
-    const url = `${this.studentByEmailUrl}?id=${email}`;
+    const url = `${this.studentByEmailUrl}?email=${email}`;
+    return this.http.get(url)
+                  .toPromise()
+                  .then(this.extractData)
+                  .catch(this.handleError);
+}
+
+getStudentByID(id: number): Promise<Student> {
+    const url = `${this.studentByEmailUrl}?id=${id}`;
     return this.http.get(url)
                   .toPromise()
                   .then(this.extractData)

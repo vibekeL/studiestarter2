@@ -16,17 +16,17 @@ export class StudentDetailComponent implements OnInit {
 
 errorMessage: string = '';
 private sub: any;
-heroID: number;
+studentID: number;
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
-        this.heroID = +params['id']; // (+) converts string 'id' to a number
+        this.studentID = +params['id']; // (+) converts string 'id' to a number
     });
-      this.getMyStudent(this.heroID);
+      this.getMyStudent(this.studentID);
   }
 
   getMyStudent(id: number) {
-    this.studentService.getStudent(id)
+    this.studentService.getStudentByID(id) 
                    .then(
                      student => this.student = student,
                      error =>  this.errorMessage = <any>error);

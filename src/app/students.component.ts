@@ -47,6 +47,7 @@ export class StudentsComponent implements OnInit {
   }
 
   add(name: string, age: number): void {
+    /*
     name = name.trim();
     if (!name || age == 0) { return; }
       this.studentService.create(name, age)
@@ -54,9 +55,11 @@ export class StudentsComponent implements OnInit {
       this.students.push(student);
       this.selectedStudent = null;
     });
+    */
   }
 
   delete(student: Student): void {
+    /**
   this.studentService
       .delete(student.id)
       .then(() => {
@@ -64,6 +67,7 @@ export class StudentsComponent implements OnInit {
         if (this.selectedStudent === student) { this.selectedStudent = null; }
         this.getStudents();
       });
+      */
   }
 
 }
