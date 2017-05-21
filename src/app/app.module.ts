@@ -6,8 +6,8 @@ import { RouterModule }   from '@angular/router';
 import { AppComponent }        from './app.component';
 import { StudentDetailComponent } from './student-detail.component';
 import { StudentsComponent }     from './students.component';
-import { StudentService }         from './student.service';
-import { DashboardComponent }  from './dashboard.component';
+import { StudentService }   from './student.service';
+import { LogInComponent }   from './login.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { StudentSearchComponent }    from './student-search.component';
@@ -20,7 +20,7 @@ import { StudentSearchComponent }    from './student-search.component';
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
+    LogInComponent,
     StudentDetailComponent,
     StudentsComponent,
     StudentSearchComponent

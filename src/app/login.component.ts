@@ -3,12 +3,12 @@ import { Student } from './student';
 import { StudentService } from './student.service';
 
 @Component({
-  selector: 'my-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  selector: 'login',
+  templateUrl: './login.component.html',
+  styleUrls: [ './login.component.css' ]
 })
 
-export class DashboardComponent implements OnInit {
+export class LogInComponent implements OnInit {
   students: Student[] = [];
   constructor(private studentService: StudentService) { }
   ngOnInit(): void {
