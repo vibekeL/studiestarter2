@@ -20,14 +20,14 @@ export class LogInComponent implements OnInit {
 
 
     add(email: string, password: string): void {
-     
-    this.myStudent.email =email.trim();
-    this.myStudent.password=password;
-    if (!email || !password) { return; }
-      this.studentService.create(this.myStudent)
-        .then(student => {
-      this.students.push(student);
-      
-    });
-  }
+      this.myStudent = new Student();
+      this.myStudent.email =email.trim();
+      this.myStudent.password=password;
+      if (!email || !password) { return; }
+        this.studentService.create(this.myStudent)
+          .then(student => {
+        this.students.push(student);
+        
+      });
+   }
 }

@@ -13,6 +13,7 @@ export class StudentsComponent implements OnInit {
   title = 'Tour of Student';
   students: Student[];
   selectedStudent: Student;
+  myStudent: Student;
 
   errorMessage: string = '';
   isLoading: boolean = true;
@@ -47,6 +48,7 @@ export class StudentsComponent implements OnInit {
   }
 
   add(name: string, age: number): void {
+    
     /*
     name = name.trim();
     if (!name || age == 0) { return; }

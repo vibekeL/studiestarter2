@@ -87,16 +87,27 @@ getStudent(id: number): Promise<Student> {
   }
 
 create(student: Student): Promise<Student> {
-  const url = `${this.studentCreateUrl}?name=${student.name}&email=${student.email}&password=${student.password}
-                &city=${student.city}&line=${student.line}&projectstart=${student.projectstart}&onesemester=${student.onesemester}&alone=${student.alone}
-                &help=${student.help}&gender=${student.gender}&age=${student.age}&topic1=${student.topic1}&topic2=${student.topic2}
-                &topic3=${student.topic3}&topic4=${student.topic4}&topic5=${student.topic5}&thises_description=${student.thises_description}
-                &personal_description=${student.personal_description}`;
+  const url = `${this.studentCreateUrl}?email=${student.email}&password=${student.password}`;
+                alert(url);
   return this.http.get(url)
                   .toPromise()
                   .then(this.extractData) 
                   .catch(this.handleError);
 }
+/*
+create(student: Student): Promise<Student> {
+  const url = `${this.studentCreateUrl}?name=${student.name}&email=${student.email}&password=${student.password}
+                &city=${student.city}&line=${student.line}&projectstart=${student.projectstart}&onesemester=${student.onesemester}&alone=${student.alone}
+                &help=${student.help}&gender=${student.gender}&age=${student.age}&topic1=${student.topic1}&topic2=${student.topic2}
+                &topic3=${student.topic3}&topic4=${student.topic4}&topic5=${student.topic5}&thises_description=${student.thises_description}
+                &personal_description=${student.personal_description}`;
+                alert(url);
+  return this.http.get(url)
+                  .toPromise()
+                  .then(this.extractData) 
+                  .catch(this.handleError);
+}
+*/
 
 /*
  delete(id: number): Promise<void> {
