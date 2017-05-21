@@ -8,7 +8,10 @@ import { RequestOptions } from '@angular/http';
 @Injectable()
 export class StudentService {
   
-  //private heroesUrl = 'api/heroes';  // URL to web api
+  private studentByEmailUrl = 'http://gyring.org/readStudent.php';
+  private studentCreateUrl = 'http://gyring.org/createStudent.php';
+  private studentUpdateUrl = 'http://gyring.org/updateStudent.php';
+  
   private heroesListUrlPHP = 'http://gyring.org/getHeroes.php';
   private heroByIdPHP = 'http://gyring.org/getHeroById.php';
   private heroAddPHP = 'http://gyring.org/addHero.php';
@@ -43,32 +46,51 @@ export class StudentService {
     return Promise.reject(errMsg);
   }
 
-  getStudent(id: number): Promise<Student> {
-    const url = `${this.heroByIdPHP}?id=${id}`;
+  getStudent(email: string): Promise<Student> {
+    const url = `${this.studentByEmailUrl}?id=${email}`;
     return this.http.get(url)
                   .toPromise()
                   .then(this.extractData)
                   .catch(this.handleError);
 }
 
+/*
+getStudent(id: number): Promise<Student> {
+    const url = `${this.heroByIdPHP}?id=${id}`;
+    return this.http.get(url)
+                  .toPromise()
+                  .then(this.extractData)
+                  .catch(this.handleError);
+}
+ */
+
   private headers = new Headers({'Content-Type': 'application/json'});
 
   update(student: Student): Promise<Student> {
-     const url = `${this.heroUpdatePHP}?id=${student.id}&name=${student.name}&age=${student.age}`;
+     const url = `${this.studentUpdateUrl}?id=${student.id}&name=${student.name}&email=${student.email}&password=${student.password}
+                &city=${student.city}&line=${student.line}&projectstart=${student.projectstart}&onesemester=${student.onesemester}&alone=${student.alone}
+                &help=${student.help}&gender=${student.gender}&age=${student.age}&topic1=${student.topic1}&topic2=${student.topic2}
+                &topic3=${student.topic3}&topic4=${student.topic4}&topic5=${student.topic5}&thises_description=${student.thises_description}
+                &personal_description=${student.personal_description}`;
      return this.http.get(url)
                   .toPromise()
                   .then(this.extractData) 
                   .catch(this.handleError);
   }
 
-create (name: string, age: number): Promise<Student> {
-  const url = `${this.heroAddPHP}?name=${name}&age=${age}`;
+create(student: Student): Promise<Student> {
+  const url = `${this.studentCreateUrl}?name=${student.name}&email=${student.email}&password=${student.password}
+                &city=${student.city}&line=${student.line}&projectstart=${student.projectstart}&onesemester=${student.onesemester}&alone=${student.alone}
+                &help=${student.help}&gender=${student.gender}&age=${student.age}&topic1=${student.topic1}&topic2=${student.topic2}
+                &topic3=${student.topic3}&topic4=${student.topic4}&topic5=${student.topic5}&thises_description=${student.thises_description}
+                &personal_description=${student.personal_description}`;
   return this.http.get(url)
                   .toPromise()
                   .then(this.extractData) 
                   .catch(this.handleError);
 }
 
+/*
  delete(id: number): Promise<void> {
     const url = `${this.heroDeletePHP}?id=${id}`;
     return this.http
@@ -77,6 +99,7 @@ create (name: string, age: number): Promise<Student> {
       .then(() => null)
       .catch(this.handleError);
   }
+  */
 
 
 }
