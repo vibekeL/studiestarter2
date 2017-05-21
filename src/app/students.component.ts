@@ -48,16 +48,16 @@ export class StudentsComponent implements OnInit {
   }
 
   add(name: string, age: number): void {
+    this.myStudent = new Student();
     
-    /*
     name = name.trim();
     if (!name || age == 0) { return; }
-      this.studentService.create(name, age)
+      this.studentService.create(this.myStudent)
         .then(student => {
       this.students.push(student);
       this.selectedStudent = null;
     });
-    */
+    
   }
 
   delete(student: Student): void {

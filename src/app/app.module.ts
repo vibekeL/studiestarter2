@@ -9,6 +9,8 @@ import { StudentsComponent }     from './students.component';
 import { StudentService }   from './student.service';
 import { LogInComponent }   from './login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StudyComponent } from './study.component';
+import { ProjectstartComponent } from './projectstart.component';
 
 import { StudentSearchComponent }    from './student-search.component';
 @NgModule({
@@ -23,7 +25,9 @@ import { StudentSearchComponent }    from './student-search.component';
     LogInComponent,
     StudentDetailComponent,
     StudentsComponent,
-    StudentSearchComponent
+    StudentSearchComponent,
+    StudyComponent,
+    ProjectstartComponent,
   ],
   providers: [ StudentService ],
   bootstrap: [ AppComponent ]

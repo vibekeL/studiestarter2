@@ -13,10 +13,10 @@ export class StudentService {
   private studentUpdateUrl = 'http://gyring.org/updateStudent.php';
   
   private heroesListUrlPHP = 'http://gyring.org/getHeroes.php';
-  private heroByIdPHP = 'http://gyring.org/getHeroById.php';
-  private heroAddPHP = 'http://gyring.org/addHero.php';
+  //private heroByIdPHP = 'http://gyring.org/getHeroById.php';
+ // private heroAddPHP = 'http://gyring.org/addHero.php';
   //private heroDeletePHP = 'http://gyring.org/deleteHero.php';
-  private heroUpdatePHP = 'http://gyring.org/updateHero.php';
+ // private heroUpdatePHP = 'http://gyring.org/updateHero.php';
 
   constructor(private http: Http) { }
 
@@ -88,7 +88,6 @@ getStudent(id: number): Promise<Student> {
 
 create(student: Student): Promise<Student> {
   const url = `${this.studentCreateUrl}?email=${student.email}&password=${student.password}`;
-                alert(url);
   return this.http.get(url)
                   .toPromise()
                   .then(this.extractData) 
