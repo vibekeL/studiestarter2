@@ -1,1 +1,9 @@
-<h1>Do it on your own?</h1>
+
+<h4>Vil du shave hjælpe til at finde en eller flere specialepartner?</h4> 
+<div *ngIf="student">
+  <input type="radio" value="y" [(ngModel)]="student.help"/>Ja tak<br>
+  <input type="radio" value="n" [(ngModel)]="student.help"/>Nej tak<br>
+</div>
+<div>
+  <button (click)="save()">Save</button>
+</div>
