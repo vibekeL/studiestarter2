@@ -7,7 +7,7 @@ import { StudyComponent } from './study.component';
 import { ProjectstartComponent } from './projectstart.component';
 import { OnesemesterComponent } from './onesemester.component';
 import { HelpComponent } from'./help.component';
-import { SummeryComponent } from'./summery.component';
+import { PersonalComponent } from'./personal.component';
 import { DeadlinesComponent } from'./deadlines.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'projectstart/:id', component: ProjectstartComponent },
   { path: 'onesemester/:id', component: OnesemesterComponent},
   { path: 'help/:id', component: HelpComponent},
-  { path: 'summery/:id', component: SummeryComponent},
+  { path: 'personal/:id', component: PersonalComponent},
   { path: 'deadlines/:id', component: DeadlinesComponent}, 
 ];
 @NgModule({

@@ -41,7 +41,7 @@ export class HelpComponent implements OnInit {
         .then(() => this.gotoNext());
     }
   gotoNext(): void {
-    this.router.navigate(['/summery', this.student.id]);
+    this.router.navigate(['/deadlines', this.student.id]);
   }
   goBack(): void {
      this.location.back();

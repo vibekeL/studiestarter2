@@ -1,0 +1,20 @@
+<div *ngIf="student">
+   <div>
+        <label>Navn: </label>
+        <input [(ngModel)]="student.name" placeholder="navn" />
+  </div>
+   <div>
+        <label>Dit køn: </label>
+        <input [(ngModel)]="student.gender" placeholder="køn"/>
+    </div>  
+  <div>
+        <label>By: </label>
+        <input [(ngModel)]="student.city" placeholder="By" />
+  </div>
+  <div>
+        <label>Alder: </label>
+        <input [(ngModel)]="student.age" placeholder="Alder"/>
+    </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

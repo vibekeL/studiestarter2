@@ -13,7 +13,7 @@ import { StudyComponent } from './study.component';
 import { ProjectstartComponent } from './projectstart.component';
 import { OnesemesterComponent } from './onesemester.component';
 import { HelpComponent } from './help.component';
-import { SummeryComponent } from './summery.component';
+import { PersonalComponent } from './personal.component';
 import { DeadlinesComponent } from './deadlines.component';
 
 import { StudentSearchComponent }    from './student-search.component';
@@ -34,7 +34,7 @@ import { StudentSearchComponent }    from './student-search.component';
     ProjectstartComponent,
     OnesemesterComponent,
     HelpComponent,
-    SummeryComponent,
+    PersonalComponent,
     DeadlinesComponent,
   ],
   providers: [ StudentService ],
