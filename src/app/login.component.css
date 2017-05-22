@@ -138,3 +138,20 @@ button.delete {
     height: 1.8em;
     border-radius: 0 4px 4px 0;
   }
+
+  img {
+    width: 100%;
+    height: auto;
+}
+
+
+.container {
+  position: absolute;
+} 
+
+.container.button {
+  display: block;            
+  width: 100%;
+  margin: 2px;
+  text-align: center;
+}

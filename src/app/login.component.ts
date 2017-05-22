@@ -25,25 +25,28 @@ export class LogInComponent implements OnInit {
    ngOnInit(): void {     }
 
   getStudentByEmail(email, password) {
+
+if(email && password) {
     this.studentService.getStudent(email) // Try to get student by email
       .then(student => { this.students = student;
           if(this.students.id) { // Does the student exist??
             if(password != this.students.password) {
               alert("Forkert password!");
             } else {
-              alert("ROUTE til anden side her med ID = "  + this.students.id + " name= " +this.students.name)
               this.gotoNext();
             }
           } else { // Student do not exist, so lets create it
                 this.studentService.create(this.myStudent)
               .then(student => { this.students = student;
               alert("Ny bruger oprettet");
-              alert("ROUTE til anden side her med id " + this.students.id);
               this.gotoNext();
             }); 
           }
                
         });
+     } else {
+       alert("Brugernavn og adgangskode skal udfyldes!");
+     }
   }
 
   gotoNext(): void {
