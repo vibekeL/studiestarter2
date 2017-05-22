@@ -9,6 +9,7 @@ import { RequestOptions } from '@angular/http';
 export class StudentService {
   
   private studentByEmailUrl = 'http://gyring.org/readStudent.php';
+  private studentByIdUrl = 'http://gyring.org/readStudentById.php';
   private studentCreateUrl = 'http://gyring.org/createStudent.php';
   private studentUpdateUrl = 'http://gyring.org/updateStudent.php';
   
@@ -55,7 +56,7 @@ export class StudentService {
 }
 
 getStudentByID(id: number): Promise<Student> {
-    const url = `${this.studentByEmailUrl}?id=${id}`;
+    const url = `${this.studentByIdUrl}?id=${id}`;
     return this.http.get(url)
                   .toPromise()
                   .then(this.extractData)

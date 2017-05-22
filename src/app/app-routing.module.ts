@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'login',  component: LogInComponent },
   { path: 'detail/:id', component: StudentDetailComponent },
   { path: 'students',     component: StudentsComponent },
-  { path: 'study',     component: StudyComponent },
+  { path: 'study/:id',     component: StudyComponent },
   { path: 'projectstart', component: ProjectstartComponent },
   { path: 'onesemester', component: OnesemesterComponent},
   { path: 'alone', component: AloneComponent},

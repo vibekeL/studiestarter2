@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from './student';
 import { StudentService } from './student.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'login',
@@ -12,7 +13,7 @@ export class LogInComponent implements OnInit {
   errorMessage: string = '';
   students: Student;
   myStudent: Student;
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService, private router: Router) { }
 
   add(email: string, password: string): void {   
       this.myStudent = new Student();
@@ -31,16 +32,22 @@ export class LogInComponent implements OnInit {
               alert("Forkert password!");
             } else {
               alert("ROUTE til anden side her med ID = "  + this.students.id + " name= " +this.students.name)
+              this.gotoNext();
             }
           } else { // Student do not exist, so lets create it
                 this.studentService.create(this.myStudent)
               .then(student => { this.students = student;
               alert("Ny bruger oprettet");
               alert("ROUTE til anden side her med id " + this.students.id);
+              this.gotoNext();
             }); 
           }
                
         });
+  }
+
+  gotoNext(): void {
+    this.router.navigate(['/study', this.students.id]);
   }
 
 }

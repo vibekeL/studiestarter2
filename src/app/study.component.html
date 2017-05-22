@@ -1,1 +1,16 @@
 <h1>Studieretning</h1>
+<div>
+  <div>
+    <label>id: </label>{{student.id}}
+ </div>
+  <div>
+        <label>Student email:</label>
+        <input [(ngModel)]="student.email" placeholder="email" /> 
+        </div>
+  <div>
+      <label>Password:</label>
+       <input [(ngModel)]="student.password" placeholder="password" />
+ </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
