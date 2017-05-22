@@ -6,7 +6,7 @@ import { Location }                 from '@angular/common';
 import { Router }                 from '@angular/router';
 
 @Component({
-  selector: 'study',
+  selector: 'projectstart',
   templateUrl: './projectstart.component.html',
   styleUrls: [ './login.component.css' ]
 })
