@@ -19,6 +19,7 @@ export class LogInComponent implements OnInit {
       this.myStudent = new Student();
       this.myStudent.email =email.trim();
       this.myStudent.password=password.trim();
+      this.students = [];
 
       this.getStudentByEmail(email);
       alert("1" + this.myTestStudent.password);
@@ -28,7 +29,9 @@ export class LogInComponent implements OnInit {
       } else {
         alert("3" + this.myTestStudent.password);
           this.studentService.create(this.myStudent)
-            .then(student => { this.students.push(student);}); 
+            .then(student => { this.students.push(student);
+            alert("FROM CREATE " + this.students.length + " " + this.students[0].email)
+          }); 
       }  
    }
    ngOnInit(): void {
@@ -40,10 +43,21 @@ export class LogInComponent implements OnInit {
    getStudentByEmail(email) {
     this.myTestStudent =new Student();
     this.studentService.getStudent(email) 
+                  .then(student => { this.students.push(student);
+                alert("FROM READ " + this.students.length + " " + this.students[0].email + " PASSWORD " + this.students[0].password)
+          });
+                     
+  }
+
+/*
+  getStudentByEmail(email) {
+    this.myTestStudent =new Student();
+    this.studentService.getStudent(email) 
                    .then(
                      student => this.myTestStudent = student,
                      error =>  this.errorMessage = <any>error);
                      alert("2" +this.myTestStudent.password);
                      
   }
+  */
 }

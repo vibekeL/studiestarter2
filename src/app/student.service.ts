@@ -21,7 +21,7 @@ export class StudentService {
   constructor(private http: Http) { }
 
   getStudents (): Promise<Student[]> {
-    return this.http.get(this.heroesListUrlPHP)
+    return this.http.get(this.studentsListUrlPHP)
                   .toPromise()
                   .then(this.extractData)
                   .catch(this.handleError);
