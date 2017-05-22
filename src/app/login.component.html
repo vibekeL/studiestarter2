@@ -1,15 +1,22 @@
 <div>
   <table>
+     <tr>
+       <img src="/assets/inter_big_logo.gif" >
+      <h2>mit.ITU login</h2>
+     </tr>
     <tr>
-      <td><label>Student email:</label> </td>
-      <td><input #email /> </td>
+      <td><input #email placeholder="Brugernavn" /> </td>
     </tr>
     <tr>
-      <td><label>Password:</label> </td>
-      <td><input #password /> </td>
-      <button (click)="add(email.value, password.value); email.value='';  password.value='' ">
-        Add
+      <td><input #password  placeholder="Adgangskode" /> </td>
+    </tr>
+    <tr>
+      <br>
+      <div class="container">
+      <button (click)="add(email.value, password.value); email.value='';  password.value='' " type="button" style="width:160px;">
+        Login
       </button>
+      </div>
     </tr>
   </table>
 </div>

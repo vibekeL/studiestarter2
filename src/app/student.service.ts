@@ -76,11 +76,13 @@ getStudent(id: number): Promise<Student> {
   private headers = new Headers({'Content-Type': 'application/json'});
 
   update(student: Student): Promise<Student> {
+    
      const url = `${this.studentUpdateUrl}?id=${student.id}&name=${student.name}&email=${student.email}&password=${student.password}
                 &city=${student.city}&line=${student.line}&projectstart=${student.projectstart}&onesemester=${student.onesemester}&alone=${student.alone}
                 &help=${student.help}&gender=${student.gender}&age=${student.age}&topic1=${student.topic1}&topic2=${student.topic2}
                 &topic3=${student.topic3}&topic4=${student.topic4}&topic5=${student.topic5}&thises_description=${student.thises_description}
                 &personal_description=${student.personal_description}`;
+    alert(url);
      return this.http.get(url)
                   .toPromise()
                   .then(this.extractData) 
