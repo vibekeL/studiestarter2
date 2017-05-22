@@ -1,9 +1,9 @@
 <h3>Studieretning</h3> 
-<div>
+<div *ngIf="student">
   <input type="radio" value="Software" name="line1" [(ngModel)]="student.line">Software 
   <input type="radio" value="Design" name="line2" [(ngModel)]="student.line">Design
   <input type="radio" value="Business" name="line3" [(ngModel)]="student.line">Business
 </div>
-</div>
+<div>
   <button (click)="save()">Save</button>
 </div>
