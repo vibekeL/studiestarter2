@@ -57,7 +57,7 @@ export class DeadlinesComponent implements OnInit {
         .then(() => this.gotoNext());
     }
   gotoNext(): void {
-    this.router.navigate(['/projectstart', this.student.id]);
+    this.router.navigate(['/personal', this.student.id]);
   }
 
 }
