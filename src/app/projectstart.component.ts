@@ -41,7 +41,7 @@ export class ProjectstartComponent implements OnInit {
         .then(() => this.gotoNext());
     }
   gotoNext(): void {
-    this.router.navigate(['/projectstart', this.student.id]);
+    this.router.navigate(['/onesemester', this.student.id]);
   }
   goBack(): void {
      this.location.back();

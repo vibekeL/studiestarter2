@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StudyComponent } from './study.component';
 import { ProjectstartComponent } from './projectstart.component';
 import { OnesemesterComponent } from './onesemester.component';
-import { AloneComponent } from './alone.component';
+import { HelpComponent } from './help.component';
 import { SummeryComponent } from './summery.component';
 
 import { StudentSearchComponent }    from './student-search.component';
@@ -32,7 +32,7 @@ import { StudentSearchComponent }    from './student-search.component';
     StudyComponent,
     ProjectstartComponent,
     OnesemesterComponent,
-    AloneComponent,
+    HelpComponent,
     SummeryComponent,
   ],
   providers: [ StudentService ],

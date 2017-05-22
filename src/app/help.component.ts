@@ -6,17 +6,18 @@ import { Location }                 from '@angular/common';
 import { Router }                 from '@angular/router';
 
 @Component({
-  selector: 'onesemester',
-  templateUrl: './onesemester.component.html',
+  selector: 'help',
+  templateUrl: './help.component.html',
   styleUrls: [ './login.component.css' ]
 })
 
-export class OnesemesterComponent implements OnInit {
+export class HelpComponent implements OnInit {
+
   errorMessage: string = '';
   private sub: any;
   studentID: number;
   student: Student;
-
+// test
  constructor(private studentService: StudentService, private router: Router,
               private route: ActivatedRoute,
             private location: Location
@@ -40,7 +41,7 @@ export class OnesemesterComponent implements OnInit {
         .then(() => this.gotoNext());
     }
   gotoNext(): void {
-    this.router.navigate(['/help', this.student.id]);
+    this.router.navigate(['/summery', this.student.id]);
   }
   goBack(): void {
      this.location.back();
