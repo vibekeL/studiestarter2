@@ -1,0 +1,13 @@
+<div *ngIf="student">
+    <h4>Følgende deadlines skal du huske</h4>
+    <input type="checkbox" value="1" name="1">Tilmeldingsfrist mellem d. 1. og 10. december 2016 <br>
+    <input type="checkbox" value="2" name="1">Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 5 2017 <br>
+    <input type="checkbox" value="3" name="1">Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 5 2017 <br>
+    <input type="checkbox" value="4" name="1">Specialet starter d. 1. februar 2017 <br>
+    <input type="checkbox" value="5" name="1">Specialet skal  afleveres d. 1. juni 2017 <br>
+</div>
+<div>
+  <br>
+  <button (click)="goBack()">Tilbage</button> 
+  <button (click)="save()">Næste</button>
+</div>

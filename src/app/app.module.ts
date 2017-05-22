@@ -14,6 +14,7 @@ import { ProjectstartComponent } from './projectstart.component';
 import { OnesemesterComponent } from './onesemester.component';
 import { HelpComponent } from './help.component';
 import { SummeryComponent } from './summery.component';
+import { DeadlinesComponent } from './deadlines.component';
 
 import { StudentSearchComponent }    from './student-search.component';
 @NgModule({
@@ -34,6 +35,7 @@ import { StudentSearchComponent }    from './student-search.component';
     OnesemesterComponent,
     HelpComponent,
     SummeryComponent,
+    DeadlinesComponent,
   ],
   providers: [ StudentService ],
   bootstrap: [ AppComponent ]

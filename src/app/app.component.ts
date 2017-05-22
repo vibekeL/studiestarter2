@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
     <a routerLink="/projectstart" routerLinkActive="active">Projekt start</a>
     <a routerLink="/onesemester" routerLinkActive="active">One or several</a>
     <a routerLink="/alone" routerLinkActive="active">On your own</a>
-    <a routerLink="/alone" routerLinkActive="summery">Resume</a>
+    <a routerLink="/deadlines" routerLinkActive="deadlines">Deadlines</a>
     <a routerLink="/students" routerLinkActive="active">Students</a>
   </nav>
   <router-outlet></router-outlet>
@@ -18,5 +18,5 @@ styleUrls: ['./app.component.css'],
 
 })
 export class AppComponent {
-  title = 'Studie starter'; 
+  title = 'Speciale starter'; 
 }
