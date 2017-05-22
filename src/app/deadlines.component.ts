@@ -13,10 +13,15 @@ import { Router }                 from '@angular/router';
 
 export class DeadlinesComponent implements OnInit {
 
-  errorMessage: string = ''; 
-  private sub: any;
-  studentID: number;
-  student: Student;
+    errorMessage: string = ''; 
+    private sub: any;
+    studentID: number;
+    student: Student;
+    
+    spring_2017: boolean = false;
+    fall_2017: boolean = false;
+    spring_2018: boolean = false;
+    fall_2018: boolean = false;
 
  constructor(private studentService: StudentService, private router: Router,
               private route: ActivatedRoute,
@@ -32,8 +37,19 @@ export class DeadlinesComponent implements OnInit {
   getStudent(id: number) {
       this.studentService.getStudentByID(id) 
                     .then(
-                      student => this.student = student,
-                      error =>  this.errorMessage = <any>error);
+                      student =>{ this.student = student,
+                      error =>  this.errorMessage = <any>error;
+                    if(student.projectstart == "2017-spring") {
+                        this.spring_2017 = true;
+                    } else if (student.projectstart == "2017-fall") {
+                        this.fall_2017 = true;
+                    } else if (student.projectstart == "2018-spring") {
+                        this.spring_2018 = true;
+                    } else if (student.projectstart == "2018-fall") {
+                        this.fall_2018 = true;
+                    }
+                
+            });
   }
 
   save(): void {
