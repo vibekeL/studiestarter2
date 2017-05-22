@@ -37,7 +37,6 @@ export class StudyComponent implements OnInit {
   }
 
   save(): void {
-      alert(this.student.password+"!");
       this.studentService.update(this.student)
         .then(() => this.gotoNext());
     }

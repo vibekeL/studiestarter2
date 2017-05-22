@@ -1,1 +1,14 @@
-<h1>Projekt start</h1>
+<div *ngIf="student">
+    <p align="left">Hvis du påbegynder dit speciale samtidigt med dit sidste kursus, kan du skrive dit speciale over to semestre.</p>
+    <h4>Hvornår vil du starte dit speciale?</h4>
+    <input type="radio" value="2017-spring" [(ngModel)]="student.projectstart">Forår 2017 <br>
+    <input type="radio" value="2017-fall" [(ngModel)]="student.projectstart">Efterår 2017 <br>
+    <input type="radio" value="2018-spring" [(ngModel)]="student.projectstart">Forår 2018 <br>
+    <input type="radio" value="2018-fall"  [(ngModel)]="student.projectstart">Efterår 2018 <br>
+</div>
+
+<div>
+  <br>
+  <button (click)="goBack()">Tilbage</button>
+  <button (click)="save()">Næste</button>
+</div>
