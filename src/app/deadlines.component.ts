@@ -13,7 +13,7 @@ import { Router }                 from '@angular/router';
 
 export class DeadlinesComponent implements OnInit {
 
-  errorMessage: string = '';
+  errorMessage: string = ''; 
   private sub: any;
   studentID: number;
   student: Student;
