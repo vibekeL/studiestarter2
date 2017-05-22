@@ -12,7 +12,7 @@ export class StudentService {
   private studentCreateUrl = 'http://gyring.org/createStudent.php';
   private studentUpdateUrl = 'http://gyring.org/updateStudent.php';
   
-  private heroesListUrlPHP = 'http://gyring.org/getHeroes.php';
+  private studentsListUrlPHP = 'http://gyring.org/listStudents.php';
   //private heroByIdPHP = 'http://gyring.org/getHeroById.php';
  // private heroAddPHP = 'http://gyring.org/addHero.php';
   //private heroDeletePHP = 'http://gyring.org/deleteHero.php';
