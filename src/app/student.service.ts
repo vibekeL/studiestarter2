@@ -88,6 +88,7 @@ getStudent(id: number): Promise<Student> {
 
 create(student: Student): Promise<Student> {
   const url = `${this.studentCreateUrl}?email=${student.email}&password=${student.password}`;
+  alert(url);
   return this.http.get(url)
                   .toPromise()
                   .then(this.extractData) 

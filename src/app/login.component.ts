@@ -10,7 +10,7 @@ import { StudentService } from './student.service';
 
 export class LogInComponent implements OnInit {
   errorMessage: string = '';
-  students: Student[] = [];
+  students: Student;
   myStudent: Student;
   constructor(private studentService: StudentService) { }
 
@@ -18,46 +18,29 @@ export class LogInComponent implements OnInit {
       this.myStudent = new Student();
       this.myStudent.email =email.trim();
       this.myStudent.password=password.trim();
-      this.students = [];
-
+      this.students = new Student();
       this.getStudentByEmail(email, password);
-      if (!email || !password) { 
-        return; 
-      } else {
-          this.studentService.create(this.myStudent)
-            .then(student => { this.students.push(student);
-            alert("Ny bruger oprettet");
-             alert("ROUTE til anden side her med id " + this.students[0].id);
-          }); 
-      }  
    }
-   ngOnInit(): void {
-    this.studentService.getStudents ()
-              .then(
-                     students => this.students = students,
-                     error =>  this.errorMessage = <any>error);
-  }
-   getStudentByEmail(email, password) {
-    this.studentService.getStudent(email) 
-                  .then(student => { this.students.push(student);
-                if(password != this.students[0].password) {
-                  alert("Forkert password!");
-                } else {
-                  alert("ROUTE til anden side her" )
-                }
-          });
-                     
+   ngOnInit(): void {     }
+
+  getStudentByEmail(email, password) {
+    this.studentService.getStudent(email) // Try to get student by email
+      .then(student => { this.students = student;
+          if(this.students.id) { // Does the student exist??
+            if(password != this.students.password) {
+              alert("Forkert password!");
+            } else {
+              alert("ROUTE til anden side her med ID = "  + this.students.id + " name= " +this.students.name)
+            }
+          } else { // Student do not exist, so lets create it
+                this.studentService.create(this.myStudent)
+              .then(student => { this.students = student;
+              alert("Ny bruger oprettet");
+              alert("ROUTE til anden side her med id " + this.students.id);
+            }); 
+          }
+               
+        });
   }
 
-/*
-  getStudentByEmail(email) {
-    this.myTestStudent =new Student();
-    this.studentService.getStudent(email) 
-                   .then(
-                     student => this.myTestStudent = student,
-                     error =>  this.errorMessage = <any>error);
-                     alert("2" +this.myTestStudent.password);
-                     
-  }
-  */
 }
