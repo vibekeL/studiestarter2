@@ -33,14 +33,12 @@ if(email && password) {
             if(password != this.students.password) {
               alert("Forkert password!");
             } else {
-              alert("ROUTE til anden side her med ID = "  + this.students.id + " name= " +this.students.name)
               this.gotoNext();
             }
           } else { // Student do not exist, so lets create it
                 this.studentService.create(this.myStudent)
               .then(student => { this.students = student;
               alert("Ny bruger oprettet");
-              alert("ROUTE til anden side her med id " + this.students.id);
               this.gotoNext();
             }); 
           }
