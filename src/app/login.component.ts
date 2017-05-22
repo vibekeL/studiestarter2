@@ -12,7 +12,6 @@ export class LogInComponent implements OnInit {
   errorMessage: string = '';
   students: Student[] = [];
   myStudent: Student;
-  myTestStudent: Student;
   constructor(private studentService: StudentService) { }
 
   add(email: string, password: string): void {   
@@ -21,16 +20,14 @@ export class LogInComponent implements OnInit {
       this.myStudent.password=password.trim();
       this.students = [];
 
-      this.getStudentByEmail(email);
-      alert("1" + this.myTestStudent.password);
-      if (!email || !password || this.myTestStudent.password) { 
-        alert("4" + this.myTestStudent.password);
+      this.getStudentByEmail(email, password);
+      if (!email || !password) { 
         return; 
       } else {
-        alert("3" + this.myTestStudent.password);
           this.studentService.create(this.myStudent)
             .then(student => { this.students.push(student);
-            alert("FROM CREATE " + this.students.length + " " + this.students[0].email)
+            alert("Ny bruger oprettet");
+             alert("ROUTE til anden side her med id " + this.students[0].id);
           }); 
       }  
    }
@@ -40,11 +37,14 @@ export class LogInComponent implements OnInit {
                      students => this.students = students,
                      error =>  this.errorMessage = <any>error);
   }
-   getStudentByEmail(email) {
-    this.myTestStudent =new Student();
+   getStudentByEmail(email, password) {
     this.studentService.getStudent(email) 
                   .then(student => { this.students.push(student);
-                alert("FROM READ " + this.students.length + " " + this.students[0].email + " PASSWORD " + this.students[0].password)
+                if(password != this.students[0].password) {
+                  alert("Forkert password!");
+                } else {
+                  alert("ROUTE til anden side her" )
+                }
           });
                      
   }
