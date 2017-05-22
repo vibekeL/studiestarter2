@@ -17,7 +17,7 @@ export class ProjectstartComponent implements OnInit {
   private sub: any;
   studentID: number;
   student: Student;
-
+// test
  constructor(private studentService: StudentService, private router: Router,
               private route: ActivatedRoute,
             private location: Location
