@@ -3,6 +3,7 @@ import { Student } from './student';
 import { StudentService } from './student.service';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
+import { Router }                 from '@angular/router';
 
 @Component({
   selector: 'study',
@@ -17,7 +18,7 @@ export class StudyComponent implements OnInit {
   studentID: number;
   student: Student;
 
-  constructor(private studentService: StudentService,
+ constructor(private studentService: StudentService, private router: Router,
               private route: ActivatedRoute,
             private location: Location
       ) { }
@@ -34,13 +35,13 @@ export class StudyComponent implements OnInit {
                       student => this.student = student,
                       error =>  this.errorMessage = <any>error);
   }
-  goBack(): void {
-     this.location.back();
-  }
 
   save(): void {
       this.studentService.update(this.student)
-        .then(() => this.goBack());
+        .then(() => this.gotoNext());
     }
+  gotoNext(): void {
+    this.router.navigate(['/projectstart', this.student.id]);
+  }
 
 }
