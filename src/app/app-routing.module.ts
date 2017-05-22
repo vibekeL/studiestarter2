@@ -15,9 +15,9 @@ const routes: Routes = [
   { path: 'students',     component: StudentsComponent },
   { path: 'study/:id',     component: StudyComponent },
   { path: 'projectstart/:id', component: ProjectstartComponent },
-  { path: 'onesemester:id', component: OnesemesterComponent},
-  { path: 'alone:id', component: AloneComponent},
-  { path: 'summery:id', component: SummeryComponent},
+  { path: 'onesemester/:id', component: OnesemesterComponent},
+  { path: 'alone/:id', component: AloneComponent},
+  { path: 'summery/:id', component: SummeryComponent},
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
