@@ -1,11 +1,28 @@
 
-<p align="left">
+<p align="center">
     Hvis du påbegynder dit speciale samtidigt med dit sidste kursus, kan du skrive dit speciale over to semestre.</p>
-<h4>Vil du skrive dit speciale over et eller to semestre?</h4> 
+<h4 align="center">Vil du skrive dit speciale over et eller to semestre?</h4> 
+
 <div *ngIf="student">
-  <input type="radio" value="y" [(ngModel)]="student.onesemester"/>En semester<br>
-  <input type="radio" value="n" [(ngModel)]="student.onesemester"/>To semestre<br>
-</div>
-<div>
-  <button (click)="save()">Save</button>
+<table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px">   
+<tr>
+  <td>
+  <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect"  type="radio" value="y" [(ngModel)]="student.onesemester"/></td>  
+  <td><span class="mdl-radio__label">En semester</span></td>        
+</tr>
+<tr>
+  <td>
+  <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect"  type="radio" value="n" [(ngModel)]="student.onesemester"/></td>  
+  <td><span class="mdl-radio__label">To semester</span></td>        
+</tr>
+<tr>
+<td>    
+  <button (click)="goBack();" 
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Tilbage</button></td>
+<td>
+  <button (click)="save();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Næste</button></td>
+  </tr>   
+</table>
 </div>
