@@ -1,9 +1,25 @@
 
-<h4>Vil du shave hjælpe til at finde en eller flere specialepartner?</h4> 
+<h4 align="center">Vil du shave hjælpe til at finde en eller flere specialepartner?</h4> 
 <div *ngIf="student">
-  <input type="radio" value="y" [(ngModel)]="student.help"/>Ja tak<br>
-  <input type="radio" value="n" [(ngModel)]="student.help"/>Nej tak<br>
-</div>
-<div>
-  <button (click)="save()">Save</button>
+<table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px">   
+<tr>
+  <td>
+  <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect"  type="radio" value="y" [(ngModel)]="student.help"/></td>  
+  <td><span class="mdl-radio__label">Ja tak</span></td>        
+</tr>
+<tr>
+  <td>
+  <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect"  type="radio" value="n" [(ngModel)]="student.help"/></td>  
+  <td><span class="mdl-radio__label">Nej tak</span></td>        
+</tr>
+<tr>
+<td>    
+  <button (click)="goBack();" 
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Tilbage</button></td>
+<td>
+  <button (click)="save();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Næste</button></td>
+  </tr>   
+</table>
 </div>
