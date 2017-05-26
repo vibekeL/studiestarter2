@@ -1,7 +1,8 @@
-<div>
-  <table>
-     <tr>
-       <img src="http://gyring.org/inter_big_logo.gif" > 
+  <table align="center" style="max-width:400px;">
+     <tr  align="center">
+       <img src="http://gyring.org/ITU_logo_DK.jpg" > 
+     </tr>
+     <tr >
       <h2>mit.ITU login</h2>
      </tr>
     <tr>
@@ -10,14 +11,13 @@
     <tr>
       <td><input #password  placeholder="Adgangskode" /> </td>
     </tr>
+    <tr style="height: 10px"> </tr>
     <tr>
-      <br>
-      <div class="container">
-      <button (click)="add(email.value, password.value); email.value='';  password.value='' " type="button" style="width:160px;">
+      <div style="background-color: black">
+      <button (click)="add(email.value, password.value); email.value='';  password.value='' " type="button">
         Login
       </button>
       </div>
     </tr>
   </table>
-</div>
 
