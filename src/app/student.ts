@@ -10,7 +10,10 @@ export class Student {
   alone: string;
   help: string;
   gender: string;
+  gender_pref: string;
   age: number;
+  age_from_pref: number;
+  age_to_pref: number;
   topic1: string;
   topic2: string;
   topic3: string;
