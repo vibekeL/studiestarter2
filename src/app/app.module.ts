@@ -15,6 +15,10 @@ import { OnesemesterComponent } from './onesemester.component';
 import { HelpComponent } from './help.component';
 import { PersonalComponent } from './personal.component';
 import { DeadlinesComponent } from './deadlines.component';
+import { TopicsComponent } from './topics.component';
+import { ThesisIdeaComponent } from './thesis-idea.component';
+import { PersonalDescriptionComponent } from './personal-description.component';
+import { MatchStudentsComponent } from './match-students.component';
 
 import { StudentSearchComponent }    from './student-search.component';
 @NgModule({
@@ -36,6 +40,10 @@ import { StudentSearchComponent }    from './student-search.component';
     HelpComponent,
     PersonalComponent,
     DeadlinesComponent,
+    TopicsComponent,
+    ThesisIdeaComponent,
+    PersonalDescriptionComponent,
+    MatchStudentsComponent,
   ],
   providers: [ StudentService ],
   bootstrap: [ AppComponent ]

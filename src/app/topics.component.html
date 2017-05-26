@@ -1,0 +1,26 @@
+<div *ngIf="student">
+    <h4>Hvilke speciale emner kunne interesserer dig?</h4>
+    <p align="left">(Skriv gerne flere emner i korte termer)</p>
+   <div>
+        <label>Emne 1</label>
+        <input [(ngModel)]="student.topic1" placeholder="Emne 1" />
+  </div>
+  <div>
+        <label>Emne 2</label>
+        <input [(ngModel)]="student.topic2" placeholder="Emne 2" />
+  </div>
+  <div>
+        <label>Emne 3</label>
+        <input [(ngModel)]="student.topic3" placeholder="Emne 3" />
+  </div>
+  <div>
+        <label>Emne 4</label>
+        <input [(ngModel)]="student.topic4" placeholder="Emne 4" />
+  </div>
+  <div>
+        <label>Emne 5</label>
+        <input [(ngModel)]="student.topic5" placeholder="Emne 5" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
