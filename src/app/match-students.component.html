@@ -1,18 +1,16 @@
-<h2>Match Student</h2>
-
+<h4>Vi har matchet følgende studerende med dinne kriterier:</h4>
   <ul class="student">
     <li *ngFor="let student of students"
       [class.selected]="student === selectedStudent"
       (click)="onSelect(student)" style="width: 120%">
-      <span class="badge">{{student.id}}</span> {{student.name}} 
-
+      {{student.name}} 
     </li>
   </ul>
    <button (click)="goBack()">Back</button>
   <div *ngIf="selectedStudent">
-    <h2>
-      {{selectedStudent.name | uppercase}} is my student
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
+    <h4>
+      {{selectedStudent.name}} er valgt
+    </h4>
+    <button (click)="gotoDetail()">Vil detaljer</button>
    
   </div>
