@@ -1,4 +1,4 @@
-  <table align="center" style="max-width:400px;">
+  <table table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px;">
      <tr  align="center">
        <img src="http://gyring.org/ITU_logo_DK.jpg" > 
      </tr>
@@ -13,11 +13,11 @@
     </tr>
     <tr style="height: 10px"> </tr>
     <tr>
-
-      <div style="background-color: black">
-      <button (click)="add(email.value, password.value); email.value='';  password.value='' " type="button">
+      <td><button (click)="add(email.value, password.value); email.value='';  password.value=''" 
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Login
       </button>
-      </div>
+      </td>
     </tr>
   </table>
 
