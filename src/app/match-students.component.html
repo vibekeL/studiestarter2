@@ -2,15 +2,17 @@
   <ul class="student">
     <li *ngFor="let student of students"
       [class.selected]="student === selectedStudent"
-      (click)="onSelect(student)" style="width: 120%">
+      (click)="onSelect(student)">
       {{student.name}} 
     </li>
   </ul>
-   <button (click)="goBack()">Back</button>
   <div *ngIf="selectedStudent">
     <h4>
       {{selectedStudent.name}} er valgt
     </h4>
-    <button (click)="gotoDetail()">Vil detaljer</button>
-   
+    <button (click)="goBack()">Tilbage</button>
+    <button (click)="gotoDetail()">Vis detaljer</button>
+  </div>
+  <div *ngIf="!selectedStudent">
+    <button (click)="goBack()">Tilbage</button>
   </div>

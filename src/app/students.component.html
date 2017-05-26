@@ -1,35 +1,17 @@
-<h2>My Student</h2>
+<h4>Alle studenter</h4>
 <div>
-  <table>
-    <tr>
-      <td><label>Student name:</label> </td>
-      <td><input #studentName /> </td>
-    </tr>
-    <tr>
-      <td><label>Hero age:</label> </td>
-      <td><input #studentAge /> </td>
-      <button (click)="add(studentName.value, studentAge.value); studentName.value='';  studentAge.value='' ">
-        Add
-      </button>
-    </tr>
-  </table>
 </div>
 
   <ul class="student">
     <li *ngFor="let student of students"
       [class.selected]="student === selectedStudent"
-      (click)="onSelect(student)" style="width: 120%">
-      <span class="badge">{{student.id}}</span> {{student.name}} 
-      
-      <span class="badge2">Age: {{student.age}}</span>
-      
-      <button class="delete" (click)="delete(student); $event.stopPropagation()">x</button>
-
+      (click)="onSelect(student)">
+      {{student.name}} 
     </li>
   </ul>
   <div *ngIf="selectedStudent">
-    <h2>
-      {{selectedStudent.name | uppercase}} is my student
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
+    <h4>
+      {{selectedStudent.name}} er valgt
+    </h4>
+    <button (click)="gotoDetail()">Vil Detaljer</button>
   </div>
