@@ -1,36 +1,51 @@
+    <h4 align="center">Følgende deadlines skal du huske</h4>
+    
 <div *ngIf="student">
-    <h4>Følgende deadlines skal du huske</h4>
     <div *ngIf="spring_2017">
-        <input type="checkbox" value="1" name="1">Tilmeldingsfrist mellem d. 1. og 10. december 2016 <br>
-        <input type="checkbox" value="2" name="1">Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 5 2017 <br>
-        <input type="checkbox" value="3" name="1">Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 5 2017 <br>
-        <input type="checkbox" value="4" name="1">Specialet starter d. 1. februar 2017 <br>
-        <input type="checkbox" value="5" name="1">Specialet skal afleveres d. 1. juni 2017 <br>
+       <table align="center">      
+        <p>Tilmeldingsfrist mellem d. 1. og 10. december 2016 </p>
+        <p>Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 5 2017 </p>
+        <p>Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 5 2017 </p>
+        <p>Specialet starter d. 1. februar 2017</p> 
+        <p>Specialet skal afleveres d. 1. juni 2017</p>
+    </table>  
     </div>
     <div *ngIf="fall_2017">
-        <input type="checkbox" value="1" name="1">Tilmeldingsfrist mellem d. 1. og 10. juni 2017 <br>
-        <input type="checkbox" value="2" name="1">Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 35 2017 <br>
-        <input type="checkbox" value="3" name="1">Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 35 2017 <br>
-        <input type="checkbox" value="4" name="1">Specialet starter d. 1. september 2017 <br>
-        <input type="checkbox" value="5" name="1">Specialet skal afleveres d. 2. januar 2018 <br>
+        <table align="center">     
+            <p>Tilmeldingsfrist mellem d. 1. og 10. juni 2017</p>
+            <p>Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 35 2017</p>
+            <p>Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 35 2017</p>
+            <p>Specialet starter d. 1. september 2017</p>
+            <p>Specialet skal afleveres d. 2. januar 2018 </p> 
+        </table>    
     </div>
     <div *ngIf="spring_2018">
-        <input type="checkbox" value="1" name="1">Tilmeldingsfrist mellem d. 1. og 10. december 2017 <br>
-        <input type="checkbox" value="2" name="1">Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 5 2018 <br>
-        <input type="checkbox" value="3" name="1">Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 5 2018 <br>
-        <input type="checkbox" value="4" name="1">Specialet starter d. 1. februar 2018 <br>
-        <input type="checkbox" value="5" name="1">Specialet skal afleveres d. 1. juni 2018 <br>
+        <table align="center">    
+            <p>Tilmeldingsfrist mellem d. 1. og 10. december 2017 </p>
+            <p>Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 5 2018 </p>
+            <p>Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 5 2018 </p>
+            <p>Specialet starter d. 1. februar 2018 </p>
+            <p>Specialet skal afleveres d. 1. juni 2018 </p>
+        </table>   
     </div>
     <div *ngIf="fall_2018">
-        <input type="checkbox" value="1" name="1">Tilmeldingsfrist mellem d. 1. og 10. juni 2018 <br>
-        <input type="checkbox" value="2" name="1">Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 35 2018 <br>
-        <input type="checkbox" value="3" name="1">Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 35 2018 <br>
-        <input type="checkbox" value="4" name="1">Specialet starter d. 1. september 2018 <br>
-        <input type="checkbox" value="5" name="1">Specialet skal afleveres d. 2. januar 2019 <br>
+        <table align="center">     
+            <p>Tilmeldingsfrist mellem d. 1. og 10. juni 2018 </p>
+            <p>Projektaftalen skal sendes til godkendelse hos studienævnet senest mandag i uge 35 2018 </p>
+            <p>Afhandlingsplan for møder med vejleder skal sendes til sap@itu.dk inden mandag i uge 35 2018 </p>
+            <p>Specialet starter d. 1. september 2018 </p>
+            <p>Specialet skal afleveres d. 2. januar 2019 </p>
+        </table> 
     </div>
-</div>
-<div>
-  <br>
-  <button (click)="goBack()">Tilbage</button> 
-  <button (click)="save()">Næste</button> 
+    <table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px">     
+<tr>
+    <td>    
+    <button (click)="goBack();" 
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Tilbage</button></td>
+    <td>
+        <button (click)="save();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Næste</button></td>
+  </tr>   
+</table>
 </div>
