@@ -1,15 +1,31 @@
 
- <table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px">     
-<div *ngIf="student">
-  <h4>Vælg din Studieretning</h4> 
-  <input class="mdl-radio mdl-js-radio" type="radio" value="Software" [(ngModel)]="student.line">Software
-  <input class="mdl-radio mdl-js-radio" type="radio" value="Design" [(ngModel)]="student.line">Design
-  <input class="mdl-radio mdl-js-radio" type="radio" value="Business" [(ngModel)]="student.line">Business
-</div>
-<div>
-    <button (click)="save();" 
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Næste
-          </button>
-</div>
-</table>
+ <h4 align="center">Vælg din Studieretning</h4> 
+ <div *ngIf="student"> 
+<table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px">     
+        <tr>
+        <td>
+        <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect"  type="radio" value="Software" [(ngModel)]="student.line"/></td>  
+        <td><span class="mdl-radio__label">Software</span></td>        
+      </tr>    
+      <tr>
+        <td>
+        <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect"  type="radio" value="Design" [(ngModel)]="student.line"/></td>  
+        <td><span class="mdl-radio__label">Design</span></td>      
+      </tr>    
+      <tr>
+        <td>
+        <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect" type="radio" value="Business" [(ngModel)]="student.line"/></td> 
+        <td><span class="mdl-radio__label">Business</span></td>      
+      </tr>    
+<tr>
+    <td>    
+        <button (click)="goBack();" 
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Tilbage</button>   
+    </td><td>
+        <button (click)="save();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Næste</button>
+    </td>
+  </tr>   
+     
+</table></div>
