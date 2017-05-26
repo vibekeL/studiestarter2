@@ -1,14 +1,37 @@
-<div *ngIf="student">
-    <p align="left">Hvis du påbegynder dit speciale samtidigt med dit sidste kursus, kan du skrive dit speciale over to semestre.</p>
-    <h4>Hvornår vil du starte dit speciale?</h4>
-    <input type="radio" value="2017-spring" [(ngModel)]="student.projectstart">Forår 2017 <br>
-    <input type="radio" value="2017-fall" [(ngModel)]="student.projectstart">Efterår 2017 <br>
-    <input type="radio" value="2018-spring" [(ngModel)]="student.projectstart">Forår 2018 <br>
-    <input type="radio" value="2018-fall"  [(ngModel)]="student.projectstart">Efterår 2018 <br>
-</div>
 
-<div>
-  <br>
-  <button (click)="goBack()">Tilbage</button> 
-  <button (click)="save()">Næste</button>
-</div>
+ <p align="left">Hvis du påbegynder dit speciale samtidigt med dit sidste kursus, kan du skrive dit speciale over to semestre.</p>
+    <h4>Hvornår vil du starte dit speciale?</h4>     
+    <div *ngIf="student"> 
+<table table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px">     
+        <tr>
+        <td>
+        <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect"  type="radio" value="2017-spring" [(ngModel)]="student.projectstart"/></td>  
+        <td><span class="mdl-radio__label">Forår 2017</span></td>        
+      </tr>    
+      <tr>
+        <td>
+        <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect"  type="radio" value="2017-fall" [(ngModel)]="student.projectstart"/></td>  
+        <td><span class="mdl-radio__label">Efterår 2017</span></td>      
+      </tr>    
+      <tr>
+        <td>
+        <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect" type="radio" value="2018-spring" [(ngModel)]="student.projectstart"/></td> 
+        <td><span class="mdl-radio__label">Forår 2018</span></td>      
+      </tr>    
+      <tr>
+        <td>
+        <input class="mdl-radio mdl-js-radio mdl-js-ripple-effect" type="radio" value="2018-fall"  [(ngModel)]="student.projectstart"/></td>  
+        <td><span class="mdl-radio__label">Efterår 2018</span></td>    
+      </tr>    
+<tr>
+    <td>    
+        <button (click)="goBack();" 
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Tilbage</button>   
+    </td><td>
+        <button (click)="save();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Næste</button>
+    </td>
+  </tr>   
+     
+</table></div>
