@@ -3,9 +3,11 @@ import { Component } from '@angular/core';
     selector: 'app-root',
    template: `
    <table align="center"> 
+   <!--
    <nav>
     <a routerLink="/students" routerLinkActive="active">Alle studerende</a>
   </nav>
+  -->
   <h4>{{title}}</h4>
    </table>
   

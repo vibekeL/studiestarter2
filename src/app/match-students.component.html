@@ -1,18 +1,48 @@
-<h4>Vi har matchet følgende studerende med dinne kriterier:</h4>
-  <ul class="student">
-    <li *ngFor="let student of students"
-      [class.selected]="student === selectedStudent"
-      (click)="onSelect(student)">
-      {{student.name}} 
+<h4 align="center">Vi har matchet følgende studerende med dinne kriterier:</h4> 
+<div *ngIf="student"> 
+
+ 
+<table align="center" >     
+      
+      <tr>
+        <td colspan="2">
+          <ul class="student">
+          <li *ngFor="let student of students"
+           [class.selected]="student === selectedStudent"
+          (click)="onSelect(student)">
+        &nbsp;  {{student.name}} 
     </li>
   </ul>
-  <div *ngIf="selectedStudent">
-    <h4>
+  
+        </td>  
+      </tr>
+</table>
+ <div *ngIf="selectedStudent">
+    <h4 align="center">
       {{selectedStudent.name}} er valgt
     </h4>
-    <button (click)="goBack()">Tilbage</button>
-    <button (click)="gotoDetail()">Vis detaljer</button>
   </div>
-  <div *ngIf="!selectedStudent">
-    <button (click)="goBack()">Tilbage</button>
-  </div>
+      <table align="center" >  
+
+      <tr>
+        <div *ngIf="selectedStudent">
+            <td>    
+                  <button (click)="goBack();" 
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Tilbage</button>   
+            </td>
+            <td>
+                  <button (click)="gotoDetail();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Vis detaljer</button>
+            </td>
+            </div>
+            <div *ngIf="!selectedStudent">
+              <td colspan="2">
+              <button (click)="goBack();" 
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Tilbage</button>  
+              </td>
+            </div>
+      </tr>   
+</table>
+</div>

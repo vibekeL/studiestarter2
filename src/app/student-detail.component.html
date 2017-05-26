@@ -1,7 +1,7 @@
-<div *ngIf="student">
-    <h4>{{student.name}}</h4>
-  <table>
-    <tr>
+<div *ngIf="student"> 
+  <h4 align="center">{{student.name}}</h4>
+<table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px">     
+      <tr>
       <td>ID:</td> <td>{{student.id}} </td>
     </tr>
     <tr>
@@ -20,11 +20,28 @@
       <td>Speciale emner:</td> <td>{{student.topic1}} {{student.topic2}} {{student.topic3}} {{student.topic4}} {{student.topic5}}</td>
     </tr>
     <tr>
-      <td>Speciale ide:</td> <td>{{student.thises_description}}</td>
+       <td colspan="2" align="left">
+         Speciale ide:
+         <br>
+         <textarea [(ngModel)]="student.thises_description" rows="5" cols="35" disabled=true></textarea>
+       </td>
     </tr>
      <tr>
-      <td>Om {{student.name}}</td> <td>{{student.personal_description}}</td>
+       <td colspan="2" align="left">
+         Om {{student.name}}:
+         <br>
+         <textarea [(ngModel)]="student.personal_description" rows="5" cols="35" disabled=true></textarea>
+       </td>
     </tr>
-  </table>
-  <button (click)="goBack()">Back</button>
+    </table>
+<table align="center">
+<tr>
+    <td >    
+        <button (click)="goBack();"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Tilbage</button>   
+    </td>
+  </tr>   
+     
+</table>
 </div>

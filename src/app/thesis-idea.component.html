@@ -1,8 +1,23 @@
-<div *ngIf="student">
-    <h4>Skriv lidt om din speciale ide</h4>
-   <div>
-        <textarea [(ngModel)]="student.thises_description" rows="10" cols="40"></textarea>
-  </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
+<h4 align="center">Skriv lidt om din speciale ide</h4> 
+<div *ngIf="student"> 
+<table class="mdl-data-table mdl-js-data-table" align="center" style="max-width:400px">     
+      
+      <tr>
+            <td colspan="2">
+                  <textarea [(ngModel)]="student.thises_description" rows="15" cols="35"></textarea>
+            </td>  
+      </tr>
+
+      <tr>
+            <td>    
+                  <button (click)="goBack();" 
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Tilbage</button>   
+            </td><td>
+                  <button (click)="save();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Næste</button>
+            </td>
+      </tr>   
+     
+</table>
 </div>
