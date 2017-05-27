@@ -31,8 +31,7 @@ export class StudentService {
 }
 
 matchStudents (student: Student): Promise<Student[]> {
-  const url = `${this.studentsMatchUrl}?line=${student.line}&projectstart=${student.projectstart}&help=${student.help}
-  &topic1=${student.topic1}&topic2=${student.topic2}&topic3=${student.topic3}&topic4=${student.topic4}&topic5=${student.topic5}`;
+  const url = `${this.studentsMatchUrl}?line=${student.line}&projectstart=${student.projectstart}&help=${student.help}&topic1=${student.topic1}&topic2=${student.topic2}&topic3=${student.topic3}&topic4=${student.topic4}&topic5=${student.topic5}`;
     return this.http.get(url)
                   .toPromise()
                   .then(this.extractData)

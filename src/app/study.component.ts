@@ -44,4 +44,8 @@ export class StudyComponent implements OnInit {
     this.router.navigate(['/projectstart', this.student.id]);
   }
 
+  goBack(): void {
+     this.location.back();
+  }
+
 }
