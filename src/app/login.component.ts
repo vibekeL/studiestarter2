@@ -24,9 +24,8 @@ export class LogInComponent implements OnInit {
    }
    ngOnInit(): void {     }
 
-  getStudentByEmail(email, password) {
-
-if(email && password) {
+getStudentByEmail(email, password) {
+  if(email && password) {
     this.studentService.getStudent(email) // Try to get student by email
       .then(student => { this.students = student;
           if(this.students.id) { // Does the student exist??
