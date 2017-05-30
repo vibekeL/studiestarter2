@@ -20,7 +20,6 @@ import { ThesisIdeaComponent } from './thesis-idea.component';
 import { PersonalDescriptionComponent } from './personal-description.component';
 import { MatchStudentsComponent } from './match-students.component';
 
-import { StudentSearchComponent }    from './student-search.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -33,7 +32,6 @@ import { StudentSearchComponent }    from './student-search.component';
     LogInComponent,
     StudentDetailComponent,
     StudentsComponent,
-    StudentSearchComponent,
     StudyComponent,
     ProjectstartComponent,
     OnesemesterComponent,

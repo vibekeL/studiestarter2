@@ -10,7 +10,7 @@ import { Router} from '@angular/router';
 })
 
 export class StudentsComponent implements OnInit {
-  title = 'Tour of Student';
+  title = 'Student';
   students: Student[];
   selectedStudent: Student;
   myStudent: Student;
@@ -21,12 +21,6 @@ export class StudentsComponent implements OnInit {
   constructor(
     private studentService: StudentService, 
     private router: Router) { }
-
-  /**
-  getHeroesORIGINAL(): void {
-    this.heroService.getHeroes().then(students => this.students = students);
-  }
-   /*/   
 
   getStudents() {
     this.studentService.getStudents()
@@ -61,15 +55,6 @@ export class StudentsComponent implements OnInit {
   }
 
   delete(student: Student): void {
-    /**
-  this.studentService
-      .delete(student.id)
-      .then(() => {
-        this.students = this.students.filter(h => h !== student);
-        if (this.selectedStudent === student) { this.selectedStudent = null; }
-        this.getStudents();
-      });
-      */
   }
 
 }
